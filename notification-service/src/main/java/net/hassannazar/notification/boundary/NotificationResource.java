@@ -2,8 +2,6 @@ package net.hassannazar.notification.boundary;
 
 import io.reactivex.Flowable;
 import io.smallrye.reactive.messaging.annotations.Channel;
-import org.eclipse.microprofile.reactive.messaging.Incoming;
-import org.eclipse.microprofile.reactive.streams.operators.ReactiveStreams;
 import org.reactivestreams.Publisher;
 
 import javax.annotation.PostConstruct;
@@ -15,6 +13,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.sse.OutboundSseEvent;
 import javax.ws.rs.sse.Sse;
 import javax.ws.rs.sse.SseBroadcaster;
 import javax.ws.rs.sse.SseEventSink;
@@ -32,27 +31,29 @@ public class NotificationResource {
     @Channel("generated-notifications-internal")
     Publisher<String> notifications;
 
-    private volatile SseBroadcaster sseBroadcaster;
+    private SseBroadcaster sseBroadcaster;
 
     @PostConstruct
     public void setupResource() {
         sseBroadcaster = sse.newBroadcaster();
-    }
-    
-    @Incoming("generated-notifications-internal")
-    public void broadCastEvent(final String data){
 
-        System.out.println("data = " + data);
-        final var event = sse.newEventBuilder()
-                .mediaType(MediaType.APPLICATION_JSON_TYPE)
-                .data(data)
-                .build();
+        OutboundSseEvent.Builder eventBuilder = sse.newEventBuilder()
+                .mediaType(MediaType.APPLICATION_JSON_TYPE);
 
-        try {
-            sseBroadcaster.broadcast(event);
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+        Flowable.fromPublisher(notifications)
+                .doOnNext(data -> {
+                    System.out.println("Sending event: " + data);
+                })
+                .map(data -> {
+                    return eventBuilder
+                            .data(data)
+                            .build();
+                })
+                .doOnError(e -> {
+                    System.err.println(e.getMessage());
+                })
+                .doFinally(sseBroadcaster::close)
+                .subscribe(sseBroadcaster::broadcast);
     }
 
     @GET
