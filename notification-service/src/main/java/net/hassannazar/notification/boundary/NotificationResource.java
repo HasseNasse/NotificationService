@@ -28,7 +28,7 @@ public class NotificationResource {
     Sse sse;
 
     @Inject
-    @Channel("notifications")
+    @Channel("generated-notifications")
     Publisher<String> notifications;
 
     private SseBroadcaster sseBroadcaster;

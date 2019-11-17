@@ -41,14 +41,8 @@
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.microprofile.reactive-streams-operators:microprofile-reactive-streams-operators-core:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: io.reactivex.rxjava2:rxjava:2.2.13" level="project" />
-    <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-reactive-messaging-amqp:1.0.8" level="project" />
-    <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-reactive-messaging-provider:1.0.8" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss:jandex:2.1.1.Final" level="project" />
-    <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-axle-amqp-client:0.0.10" level="project" />
-    <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-axle-core:0.0.10" level="project" />
-    <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-reactive-streams-operators:1.0.9" level="project" />
-    <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-axle-generator:0.0.10" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-amqp-client:3.8.2" level="project" />
+    <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-reactive-messaging-kafka:1.0.8" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-rx-java2:3.8.2" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-core:3.8.2" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.39.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.39.Final" level="project" />
@@ -65,15 +59,36 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.9" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.9.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-proton:3.8.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.qpid:proton-j:0.33.2" level="project" />
-    <orderEntry type="library" name="Maven: io.vertx:vertx-rx-java2:3.8.2" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-rx-gen:3.8.2" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-codegen:3.8.2" level="project" />
     <orderEntry type="library" name="Maven: org.mvel:mvel2:2.3.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.vertx:vertx-kafka-client:3.8.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kafka:kafka_2.12:2.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-scala_2.12:2.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-paranamer:2.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.8" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.9" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.9" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.jopt-simple:jopt-simple:5.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.yammer.metrics:metrics-core:2.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-reflect:2.12.8" level="project" />
+    <orderEntry type="library" name="Maven: com.typesafe.scala-logging:scala-logging_2.12:3.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.101tec:zkclient:0.11" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.14" level="project" />
+    <orderEntry type="library" name="Maven: com.github.spotbugs:spotbugs-annotations:3.1.9" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.yetus:audience-annotations:0.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.21" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.16" level="project" />
+    <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-reactive-messaging-provider:1.0.8" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss:jandex:2.1.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.microprofile.reactive.messaging:microprofile-reactive-messaging-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: io.smallrye.reactive:smallrye-reactive-converter-api:1.0.10" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.9" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.28" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kafka:kafka-clients:2.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.luben:zstd-jni:1.4.0-1" level="project" />
+    <orderEntry type="library" name="Maven: org.lz4:lz4-java:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial.snappy:snappy-java:1.1.7.3" level="project" />
   </component>
 </module>
