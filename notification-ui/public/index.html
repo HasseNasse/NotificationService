@@ -39,21 +39,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-
-      <div class="container">
-      
-          <h2>Last price</h2>
-          <div class="row">
-          <p class="col-md-12">Message: <strong><span id="content">N/A</span></strong>.</p>
-          </div>
-      </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script>
-      var source = new EventSource("http://localhost:9080/notification-service/notifications/stream");
-      source.onmessage = function (event) {
-          console.log(event);
-          document.getElementById("content").innerHTML = event.data;
-      };
-  </script>
 </html>

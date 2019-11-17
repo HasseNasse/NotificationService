@@ -28,7 +28,7 @@ public class NotificationResource {
     Sse sse;
 
     @Inject
-    @Channel("generated-notifications-internal")
+    @Channel("notifications")
     Publisher<String> notifications;
 
     private SseBroadcaster sseBroadcaster;
@@ -37,6 +37,7 @@ public class NotificationResource {
     public void setupResource() {
         sseBroadcaster = sse.newBroadcaster();
 
+        // Define a SSE eventBuilder
         OutboundSseEvent.Builder eventBuilder = sse.newEventBuilder()
                 .mediaType(MediaType.APPLICATION_JSON_TYPE);
 
@@ -44,11 +45,9 @@ public class NotificationResource {
                 .doOnNext(data -> {
                     System.out.println("Sending event: " + data);
                 })
-                .map(data -> {
-                    return eventBuilder
-                            .data(data)
-                            .build();
-                })
+                .map(data -> eventBuilder
+                        .data(data)
+                        .build())
                 .doOnError(e -> {
                     System.err.println(e.getMessage());
                 })
