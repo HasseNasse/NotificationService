@@ -6,7 +6,7 @@
 3. Produce some messages
 ```
 docker exec -it notification-service_kafka_1 bash
-./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic notifications-topic
+./bin/kafka-console-producer.sh --broker-list kafka:9092 --topic notifications-topic
 > Hello
 > Hello2 
 ```
